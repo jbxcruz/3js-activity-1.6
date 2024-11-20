@@ -1,4 +1,3 @@
-
 const cube = document.getElementById('cube');
 let cubeSize = 200; // Initial cube size (in pixels)
 let rotateX = -30;
@@ -57,17 +56,3 @@ window.addEventListener('mouseleave', () => {
   rotateY = 30;
   cube.style.transform = `scale(${cubeSize / 200}) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 });
-
-// Prevent zooming on touch devices (optional for mobile)
-window.addEventListener('touchstart', (event) => {
-  if (event.touches.length > 1) {
-    event.preventDefault(); // Prevent multi-touch zoom
-  }
-}, { passive: false });
-
-window.addEventListener('touchmove', (event) => {
-  if (event.touches.length > 1) {
-    event.preventDefault(); // Prevent pinch-to-zoom
-  }
-}, { passive: false });
-
